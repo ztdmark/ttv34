@@ -136,7 +136,7 @@ export default function ChatPage() {
 
   const renderCreateView = () => {
     return (
-    <div className="flex items-center justify-center h-full">
+    <div className="flex items-center justify-center h-full min-h-screen">
       <div className="text-center max-w-md">
         <div className="w-16 h-16 bg-sidebar-accent rounded-full flex items-center justify-center mx-auto mb-4">
           <PlusIcon className="h-8 w-8 text-sidebar-foreground/40" />
@@ -161,7 +161,7 @@ export default function ChatPage() {
   const renderDiscoverView = () => {
     if (loading) {
       return (
-        <div className="flex items-center justify-center h-full">
+        <div className="flex items-center justify-center h-full min-h-screen">
           <div className="text-center">
             <div className="w-8 h-8 border-2 border-sidebar-foreground border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
             <p className="text-sidebar-foreground">Loading chatbots...</p>
@@ -172,7 +172,7 @@ export default function ChatPage() {
 
     if (error) {
       return (
-        <div className="flex items-center justify-center h-full">
+        <div className="flex items-center justify-center h-full min-h-screen">
           <div className="text-center">
             <h2 className="text-xl font-semibold text-sidebar-foreground mb-2 font-general">Error</h2>
             <p className="text-sidebar-foreground/70 mb-4">{error}</p>
@@ -188,7 +188,7 @@ export default function ChatPage() {
     }
 
     return (
-      <div className="w-full">
+      <div className="w-full min-h-screen">
         <div className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           <div className="max-w-7xl mx-auto">
             {/* Header Section */}
@@ -225,7 +225,7 @@ export default function ChatPage() {
 
             {/* Projects Grid */}
             {filteredProjects.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 pb-12">
                 {filteredProjects.map((project, index) => (
                   <Card
                     key={project.id}
@@ -401,7 +401,7 @@ export default function ChatPage() {
             </div>
           </header>
         </div>
-        <div className="flex-1">
+        <div className="flex-1 overflow-y-auto">
           {currentView === 'discover' ? renderDiscoverView() : renderCreateView()}
         </div>
       </SidebarInset>

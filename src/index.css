@@ -93,6 +93,15 @@
     overflow-y: scroll;
   }
   
+  /* Chat page specific styles - allow scrolling */
+  body.chat-page {
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
+  }
+  
   /* Dashboard specific styles */
   body.dashboard {
     overflow: hidden;
@@ -102,7 +111,9 @@
   
   /* Chat and Dashboard font overrides */
   body.dashboard,
-  body.dashboard * {
+  body.dashboard *,
+  body.chat-page,
+  body.chat-page * {
     font-family: "Inter", sans-serif !important;
   }
   
@@ -110,11 +121,16 @@
   body.dashboard .special-font,
   body.dashboard .font-anton,
   body.dashboard h1.hero-heading,
-  body.dashboard .bento-title {
+  body.dashboard .bento-title,
+  body.chat-page .special-font,
+  body.chat-page .font-anton,
+  body.chat-page h1.hero-heading,
+  body.chat-page .bento-title {
     font-family: "Anton", sans-serif !important;
   }
   
-  body.dashboard .font-general {
+  body.dashboard .font-general,
+  body.chat-page .font-general {
     font-family: "Inter", sans-serif !important;
   }
 }

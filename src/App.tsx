@@ -16,10 +16,17 @@ function Router() {
     const html = document.documentElement;
     
     if (path === '/') {
+      // Landing page
       body.className = 'landing-page';
       html.style.overflow = 'auto';
       html.style.overflowX = 'hidden';
+    } else if (path === '/chat' || path.startsWith('/chat/')) {
+      // Chat pages should be scrollable
+      body.className = 'chat-page';
+      html.style.overflow = 'auto';
+      html.style.overflowX = 'hidden';
     } else {
+      // Dashboard pages
       body.className = 'dashboard';
       html.style.overflow = 'hidden';
     }
