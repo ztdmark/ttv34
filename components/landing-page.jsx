@@ -456,7 +456,7 @@ const LandingPage = () => {
                 src="/images/image-4.webp"
                 title={
                   <>
-                    Shareable chatbot link on us
+                    Create
                   </>
                 }
                 description="Make your chatbots public for others to discover, or keep them private for your team and organization."
