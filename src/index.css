@@ -102,15 +102,6 @@
     min-height: 100vh;
   }
   
-  /* Auth page specific styles - allow scrolling */
-  body.auth-page {
-    width: 100vw;
-    overflow-x: hidden;
-    overflow-y: auto;
-    height: auto;
-    min-height: 100vh;
-  }
-  
   /* Dashboard specific styles */
   body.dashboard {
     overflow: hidden;
@@ -118,17 +109,15 @@
     width: 100vw;
   }
   
-  /* Chat, Auth, and Dashboard font overrides */
+  /* Chat and Dashboard font overrides */
   body.dashboard,
   body.dashboard *,
   body.chat-page,
-  body.chat-page *,
-  body.auth-page,
-  body.auth-page * {
+  body.chat-page * {
     font-family: "Inter", sans-serif !important;
   }
   
-  /* Special fonts for headings and titles in dashboard/chat/auth */
+  /* Special fonts for headings and titles in dashboard/chat */
   body.dashboard .special-font,
   body.dashboard .font-anton,
   body.dashboard h1.hero-heading,
@@ -136,17 +125,12 @@
   body.chat-page .special-font,
   body.chat-page .font-anton,
   body.chat-page h1.hero-heading,
-  body.chat-page .bento-title,
-  body.auth-page .special-font,
-  body.auth-page .font-anton,
-  body.auth-page h1.hero-heading,
-  body.auth-page .bento-title {
+  body.chat-page .bento-title {
     font-family: "Anton", sans-serif !important;
   }
   
   body.dashboard .font-general,
-  body.chat-page .font-general,
-  body.auth-page .font-general {
+  body.chat-page .font-general {
     font-family: "Inter", sans-serif !important;
   }
 }
