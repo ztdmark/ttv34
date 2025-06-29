@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { ThemeProvider } from '@/components/theme-provider';
 import { AuthProvider } from '@/hooks/use-auth';
 import { ProtectedRoute } from '@/components/protected-route';
+import { GetStartedPage } from '@/components/get-started-page';
 import AdminPage from '../app/admin/page';
 import ChatPage from '../app/chat/page';
 import LandingPage from '../components/landing-page';
@@ -25,6 +26,11 @@ function Router() {
       body.className = 'chat-page';
       html.style.overflow = 'auto';
       html.style.overflowX = 'hidden';
+    } else if (path === '/get-started') {
+      // Get started page should be scrollable like auth
+      body.className = 'auth-page';
+      html.style.overflow = 'auto';
+      html.style.overflowX = 'hidden';
     } else {
       // Dashboard pages
       body.className = 'dashboard';
@@ -42,6 +48,11 @@ function Router() {
   // Handle root path - show landing page
   if (path === '/') {
     return <LandingPage />;
+  }
+  
+  // Handle get-started page
+  if (path === '/get-started') {
+    return <GetStartedPage />;
   }
   
   // Handle individual chat routes
