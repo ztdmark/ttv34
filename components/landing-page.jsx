@@ -11,10 +11,11 @@ import ZoomScrollMobile from "./zoom-scrollMobile";
 gsap.registerPlugin(ScrollTrigger);
 
 // Button Component
-const Button = ({ id, title, rightIcon, leftIcon, containerClass }) => {
+const Button = ({ id, title, rightIcon, leftIcon, containerClass, onClick }) => {
   return (
     <button
       id={id}
+      onClick={onClick}
       className={clsx(
         "group relative z-10 w-fit cursor-pointer overflow-hidden rounded-full bg-violet-50 px-7 py-3 text-black",
         containerClass
@@ -259,6 +260,11 @@ const LandingPage = () => {
     }
   };
 
+  // Navigation handler
+  const handleGetStarted = () => {
+    window.location.href = '/get-started';
+  };
+
   // Effects
   useEffect(() => {
     if (audioElementRef.current) {
@@ -343,7 +349,7 @@ const LandingPage = () => {
                 title="Get Started"
                 rightIcon={<TiLocationArrow />}
                 containerClass="bg-white flex items-center justify-center gap-1 whitespace-nowrap text-sm px-4 py-2"
-                onClick={() => window.location.href = '/get-started'}
+                onClick={handleGetStarted}
               />
             </div>
           </nav>
@@ -383,7 +389,7 @@ const LandingPage = () => {
                 title="Get Started"
                 leftIcon={<TiLocationArrow />}
                 containerClass="bg-white text-black flex-center gap-1"
-                onClick={() => window.location.href = '/get-started'}
+                onClick={handleGetStarted}
               />
             </div>
           </div>
@@ -568,7 +574,7 @@ const LandingPage = () => {
                 id="realm-btn"
                 title="start building"
                 containerClass="mt-5 relative z-30 bg-white text-black"
-                onClick={() => window.location.href = '/get-started'}
+                onClick={handleGetStarted}
               />
             </div>
           </div>
